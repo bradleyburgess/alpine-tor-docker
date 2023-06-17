@@ -1,7 +1,7 @@
 # vim:set ft=dockerfile:
-FROM alpine:latest
+# Forked from andrius/alpine-tor
 
-LABEL org.opencontainers.image.authors="\"Andrius Kairiukstis\" <k@c0.lt>"
+FROM alpine:latest
 
 RUN apk --update \
         --allow-untrusted \
@@ -9,6 +9,8 @@ RUN apk --update \
         add \
           tor \
           torsocks \
+          curl \
+          lynx \
 &&  apk --update \
         --allow-untrusted \
         --repository http://dl-4.alpinelinux.org/alpine/edge/testing/ \
